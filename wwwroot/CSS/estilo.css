@@ -1,2 +1,5 @@
-﻿body {
+﻿/* header */
+.nav-pills .nav-link.active {
+    background-color: transparent !important; /* remove fundo azul */
+    color: white !important; /* deixa o ícone/texto branco */
 }
