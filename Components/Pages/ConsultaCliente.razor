@@ -2,46 +2,54 @@
 
 <div class="container-md pt-3">
     <div class="breadcrumb">
-        <a> Home </a> • <a href="#">Consultar Cliente</a>
+        <a href="/"> Home </a> • <a> Consultar Cliente </a>
     </div>
     <div class="border p-4 rounded">
-        <h2>Consultar Cliente <i class="bi bi-search"></i> </h2>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar">
-            <button class=" fa-filter fa-solid">Filtrar</button>
-            <button class="fa-solid fa-plus"> + Adicionar</button>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>CPF</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Viviane</td>
-                    <td>00120033</td>
-                    <td>12334556798</td>
-                    <td><button class="btn-view">👁️</button></td>
-                </tr>
-                <tr>
-                    <td>Viviane</td>
-                    <td>00120033</td>
-                    <td>09876543212</td>
-                    <td><button class="btn-view">👁️</button></td>
-                </tr>
-                <tr>
-                    <td>Viviane</td>
-                    <td>00120033</td>
-                    <td>12356478907</td>
-                    <td><button class="btn-view">👁️</button></td>
-                </tr>
-            </tbody>
-        </table>
+    <h2>Consultar Cliente 🔍</h2>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar">
+      <button class="btn btn-filter"><i class="fa-solid fa-filter"></i> Filtrar</button>
+      <button class="btn btn-add"><i class="fi fi-sr-user-add"></i> Adicionar novo cliente</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>CPF</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Viviane</td>
+          <td>00120033</td>
+          <td>12334556798</td>
+          <td>
+            <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+          </td>
+          
+        </tr>
+        <tr>
+          <td>Viviane</td>
+          <td>00120033</td>
+          <td>09876543212</td>
+          <td>
+            <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+          </td>
+          
+        </tr>
+        <tr>
+          <td>Viviane</td>
+          <td>00120033</td>
+          <td>12356478907</td>
+          <td>
+            <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
     </div>
 </div>
+

@@ -1,41 +1,42 @@
 ﻿@page "/ConsultaServico"
 <div class="container-md pt-3">
     <div class="breadcrumb">
-        Home • <a href="#">Consultar Serviço</a>
+        <a href="/"> Home </a> • <a href="#">Consultar Serviço</a>
     </div>
     <div class="border p-4 rounded">
         <h2>Consultar Serviço 🔍</h2>
-
         <div class="search-bar">
-            <input type="text" placeholder="Buscar">
-            <button class=" fa-filter fa-solid">Filtrar</button>
-            <button class="fa-solid fa-plus"> + Adicionar</button>
-
+          <input type="text" placeholder="Buscar">
+          <button class="btn btn-filter"><i class="fa-solid fa-filter"></i> Filtrar</button>
+          <button href="/CadastroServico" class="btn btn-add"><i class="fi fi-sr-user-add"></i> Adicionar Novo Serviço </button>
         </div>
         <table>
-            <thead>
-                <tr>
-                    <th>Serviço</th>
-                    <th>Código</th>
-                    <th>Prestador</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Troca de óleo</td>
-                    <td>674656</td>
-                    <td>Silvana</td>
-                    <td><button class="btn-view">👁️</button></td>
-                </tr>
-                <tr>
-                    <td>Troca de pneu</td>
-                    <td>0068678</td>
-                    <td>Fernando</td>
-                    <td><button class="btn-view">👁️</button></td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Serviço</th>
+              <th>Código</th>
+              <th>Prestador</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Troca de óleo</td>
+              <td>674656</td>
+              <td>Silvana</td>
+              <td>
+                <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+              </td>
+            </tr>
+            <tr>
+                <td>Troca de pneu</td>
+                <td>0068678</td>
+                <td>Fernando</td>
+                <td>
+                  <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+                </td>
+              </tr>
+          </tbody>
         </table>
     </div>
 </div>
