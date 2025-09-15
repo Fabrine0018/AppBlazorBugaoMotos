@@ -36,6 +36,12 @@
         color: #666;
     }
 
+.border-left {
+    border-left: 4px solid #666;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
 input, select, textarea {
     width: 100%;
     padding: 10px;
@@ -58,6 +64,16 @@ input, select, textarea {
 .row-3 {
     display: flex;
     gap: 15px;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: #fff;
+    background-size: 16px;
+    padding-right: 35px;
 }
 
     .row-3 > div {

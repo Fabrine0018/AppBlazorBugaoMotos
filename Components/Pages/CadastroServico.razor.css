@@ -5,6 +5,12 @@
     padding: 20px;
 }
 
+.border-left {
+    border-left: 4px solid #666;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
 .breadcrumb {
     font-size: 14px;
     color: #333;
@@ -15,6 +21,8 @@
         color: #1a0dab;
         text-decoration: none;
     }
+
+
 
 .container {
     border: 2px solid rgb(180, 180, 180);

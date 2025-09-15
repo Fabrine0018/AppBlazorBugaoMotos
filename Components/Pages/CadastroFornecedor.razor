@@ -1,53 +1,45 @@
 ﻿@page "/CadastroFornecedor"
-
-<div class="container-md pt-3">
-    <div class="breadcrumb">
-        <a href="#">Home</a> > <a href="#">Cadastrar: Fornecedor</a>
-    </div>
-    <div class="border p-4 rounded">
-        <h2>Cadastro do fornecedor</h2>
+<div class="border p-4 rounded">
+    <div class="border-left">
+        <h3>Cadastro do fornecedor</h3>
         <p>Preencha todas as informações corretamente</p>
+    </div>
 
-        <input type="text" placeholder="Nome">
+    <input type="text" placeholder="Nome">
 
-        <div class="row">
-            <div><input type="text" placeholder="Telefone"></div>
-            <div><input type="text" placeholder="CNPJ"></div>
+    <div class="row">
+        <div><input type="text" placeholder="Telefone"></div>
+        <div><input type="text" placeholder="CNPJ"></div>
+        <div><input type="text" placeholder="N casa/apto"></div>
+        <div><input type="text" placeholder="Responsável"></div>
+        <div><input type="text" placeholder="Razão Social"></div>
+    </div>
 
-            <div><input type="text" placeholder="N casa/apto"></div>
-            <div><input type="text" placeholder="Estado"></div>
-            <div><input type="text" placeholder="Cidade"></div>
+    <div class="divider"></div>
 
-            <div><input type="text" placeholder="Responsável"></div>
-            <div><input type="text" placeholder="Razão Social"></div>
+    <div class="row-3">
+        <div><input type="text" placeholder="CEP"></div>
+        <div>
+            <select>
+                <option disabled selected>Estado</option>
+            </select>
         </div>
-
-        <div class="divider"></div>
-
-        <div class="row-3">
-            <div><input type="text" placeholder="CEP"></div>
-            <div>
-                <select>
-                    <option disabled selected>Estado</option>
-                </select>
-            </div>
-            <div>
-                <select>
-                    <option disabled selected>Cidade</option>
-                </select>
-            </div>
+        <div>
+            <select>
+                <option disabled selected>Cidade</option>
+            </select>
         </div>
+    </div>
 
-        <div class="row">
-            <div><input type="text" placeholder="Rua"></div>
-            <div><input type="text" placeholder="Bairro"></div>
-        </div>
+    <div class="row">
+        <div><input type="text" placeholder="Rua"></div>
+        <div><input type="text" placeholder="Bairro"></div>
+    </div>
 
-        <textarea rows="4" placeholder="Complemento"></textarea>
+    <textarea rows="4" placeholder="Complemento"></textarea>
 
-        <div class="buttons">
-            <button class="btn-salvar">SALVAR</button>
-            <button class="btn-deletar">Deletar</button>
-        </div>
+    <div class="buttons">
+        <button class="btn-salvar">Salvar</button>
+        <button class="btn-deletar">Deletar</button>
     </div>
 </div>

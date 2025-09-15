@@ -14,3 +14,16 @@
 .nav-link[aria-expanded="true"] .bi-caret-down-fill {
     transform: rotate(180deg);
 }
+
+select {
+    padding-right: 32px; /* espaço extra à direita */
+    background-position: right 10px center; /* seta não colada na borda */
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+
+        
+.form-select {
+    padding-right: 2rem; 
+}
