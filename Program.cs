@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
+//Codigo para listagem de fornecedor
+//builder.Services.AddScoped<AppBugaoMotoFVLE.Models.FornecedorDAO>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

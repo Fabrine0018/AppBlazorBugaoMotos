@@ -1,4 +1,10 @@
 ﻿@page "/CadastroFornecedor"
+@rendermode InteractiveServer
+
+@using AppBugaoMotoFVLE.Models;
+@inject FornecedorDAO fornecedorDAO;
+@inject NavigationManager Navigation;
+
 <div class="border p-4 rounded">
     <div class="breadcrumb ">
         <a href="#">Home</a> > <a href="#">Cadastrar: Fornecedor</a>
@@ -7,7 +13,7 @@
         <h3>Cadastro do fornecedor</h3>
         <p>Preencha todas as informações corretamente</p>
     </div>
-
+    <!-- adicionar @bind-value="_novoFornecedor!.Nome" em cada atributo-->
     <input type="text" placeholder="Nome">
 
     <div class="row">
@@ -46,3 +52,21 @@
         <button class="btn-deletar">Deletar</button>
     </div>
 </div>
+
+@code {
+    private string? erro = null;
+    [SupplyParameterFromForm]
+    private Fornecedor? _novoFornecedor { get; set; } = new Fornecedor();
+
+    private void Salvar() {
+        try{
+            if (_novoFornecedor.CNPJ is null || _novoFornecedor.CNPJ == "") {
+                throw new Exception("O campo CNPJ é obrigatório");
+            }
+            fornecedorDAO.InserirFornecedor(_novoFornecedor);
+            Navigation.NavigateTo("/ConsultaFornecedor");
+        } catch(Exception ex) {
+            erro = ex.Message;
+        }
+    }
+}
