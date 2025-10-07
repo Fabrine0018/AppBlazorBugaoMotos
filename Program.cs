@@ -1,4 +1,5 @@
 using AppBugaoMotoFVLE.Components;
+using AppBugaoMotoFVLE.Components.Models; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 //Codigo para listagem de fornecedor
-//builder.Services.AddScoped<AppBugaoMotoFVLE.Models.FornecedorDAO>();
+
+
+builder.Services.AddSingleton<AppBugaoMotoFVLE.Configs.Conexao>();
+builder.Services.AddSingleton<AppBugaoMotoFVLE.Components.Models.FornecedorDAO>();
+
+//Adicionar a linha acima antes de `var app = builder.Build();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

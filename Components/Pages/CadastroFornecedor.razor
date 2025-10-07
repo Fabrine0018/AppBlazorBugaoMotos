@@ -1,5 +1,16 @@
 ﻿@page "/CadastroFornecedor"
+@rendermode InteractiveServer
 
+@using AppBugaoMotoFVLE.Components.Models;
+@inject FornecedorDAO fornecedorDAO;
+@inject NavigationManager Navigation;
+
+@if (erro != null)
+{
+    <div class="alert alert-danger">
+        @erro
+    </div>
+}
 
 <div class="border p-4 rounded">
     <div class="breadcrumb ">
@@ -10,35 +21,31 @@
         <p>Preencha todas as informações corretamente</p>
     </div>
     <!-- adicionar @bind-value="_novoFornecedor!.Nome" em cada atributo-->
-    <input type="text" placeholder="Nome">
+    <input @bind-value="_novoFornecedor!.Nome" type="text" placeholder="Nome">
 
     <div class="row">
-        <div><input type="text" placeholder="Telefone"></div>
-        <div><input type="text" placeholder="CNPJ"></div>
-        <div><input type="text" placeholder="N casa/apto"></div>
-        <div><input type="text" placeholder="Responsável"></div>
-        <div><input type="text" placeholder="Razão Social"></div>
+        <div><input @bind-value="_novoFornecedor!.TelefoneEmp" type="text" placeholder="Telefone"></div>
+        <div><input @bind-value="_novoFornecedor!.CNPJ" type="text" placeholder="CNPJ"></div>
+        <div><input @bind-value="_novoFornecedor!.NumeroCasaApt" type="text" placeholder="N casa/apto"></div>
+        <div><input @bind-value="_novoFornecedor!.Responsavel" type="text" placeholder="Responsável"></div>
+        <div><input @bind-value="_novoFornecedor!.RazaoSocial" type="text" placeholder="Razão Social"></div>
     </div>
 
     <div class="divider"></div>
 
     <div class="row-3">
-        <div><input type="text" placeholder="CEP"></div>
+        <div><input @bind-value="_novoFornecedor!.CEP" type="text" placeholder="CEP"></div>
         <div>
-            <select>
-                <option disabled selected>Estado</option>
-            </select>
+            <input @bind-value="_novoFornecedor!.Estado" type="text" placeholder="Estado">
         </div>
         <div>
-            <select>
-                <option disabled selected>Cidade</option>
-            </select>
+            <input @bind-value="_novoFornecedor!.Cidade" type="text" placeholder="Cidade">
         </div>
     </div>
 
     <div class="row">
-        <div><input type="text" placeholder="Rua"></div>
-        <div><input type="text" placeholder="Bairro"></div>
+        <div><input @bind-value="_novoFornecedor!.Rua" type="text" placeholder="Rua"></div>
+        <div><input @bind-value="_novoFornecedor!.Bairro" type="text" placeholder="Bairro"></div>
     </div>
 
     <textarea rows="4" placeholder="Complemento"></textarea>
@@ -48,3 +55,22 @@
         <button class="btn-deletar">Deletar</button>
     </div>
 </div>
+
+
+@code {
+    private string? erro = null;
+    [SupplyParameterFromForm]
+    private Fornecedor? _novoFornecedor { get; set; } = new Fornecedor();
+
+    private void Salvar() {
+        try{
+            if (_novoFornecedor.CNPJ is null || _novoFornecedor.CNPJ == "") {
+                throw new Exception("O campo CNPJ é obrigatório");
+            }
+            fornecedorDAO.InserirFornecedor(_novoFornecedor);
+            Navigation.NavigateTo("/ConsultaFornecedor");
+        } catch(Exception ex) {
+            erro = ex.Message;
+        }
+    }
+}
