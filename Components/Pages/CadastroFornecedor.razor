@@ -1,9 +1,5 @@
 ﻿@page "/CadastroFornecedor"
-@rendermode InteractiveServer
 
-@using AppBugaoMotoFVLE.Models;
-@inject FornecedorDAO fornecedorDAO;
-@inject NavigationManager Navigation;
 
 <div class="border p-4 rounded">
     <div class="breadcrumb ">
@@ -52,21 +48,3 @@
         <button class="btn-deletar">Deletar</button>
     </div>
 </div>
-
-@code {
-    private string? erro = null;
-    [SupplyParameterFromForm]
-    private Fornecedor? _novoFornecedor { get; set; } = new Fornecedor();
-
-    private void Salvar() {
-        try{
-            if (_novoFornecedor.CNPJ is null || _novoFornecedor.CNPJ == "") {
-                throw new Exception("O campo CNPJ é obrigatório");
-            }
-            fornecedorDAO.InserirFornecedor(_novoFornecedor);
-            Navigation.NavigateTo("/ConsultaFornecedor");
-        } catch(Exception ex) {
-            erro = ex.Message;
-        }
-    }
-}
