@@ -1,5 +1,6 @@
 using AppBugaoMotoFVLE.Components;
-using AppBugaoMotoFVLE.Components.Models; 
+using AppBugaoMotoFVLE.Components.Models;
+using AppBugaoMotoFVLE.Configs;
 
 var builder = WebApplication.CreateBuilder(args);
 
