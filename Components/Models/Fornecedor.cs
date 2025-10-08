@@ -18,7 +18,7 @@ namespace AppBugaoMotoFVLE.Components.Models
         public string Complemento { get; set; }
         public string RazaoSocial { get; set; }
         public string TelefoneEmp { get; set; }
-        
+
         /* endereço a decidir se será normalizado */
     }
 }

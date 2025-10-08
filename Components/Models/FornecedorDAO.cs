@@ -46,19 +46,19 @@ namespace AppBugaoMotoFVLE.Components.Models
                 var fornecedor = new Fornecedor
                 {
                     Id = leitor.GetInt32("id_forne"),
-                    Nome = leitor.GetString("nome_forne"),
-                    Responsavel = leitor.GetString("nome_responsa_forne"),
-                    CEP = leitor.GetString("cep_forne"),
-                    CNPJ = leitor.GetString("cnpj_forne"),
-                    TelefoneRes = leitor.GetString("telefoner_respon_forne"),
-                    Rua = leitor.GetString("rua_forne"),
-                    Bairro = leitor.GetString("bairro_forne"),
-                    Cidade = leitor.GetString("cidade_forne"),
-                    Estado = leitor.GetString("estado_forne"),
-                    NumeroCasaApt = leitor.GetString("numero_forne"),
-                    Complemento = leitor.GetString("complemento_forne"),
-                    RazaoSocial = leitor.GetString("razao_social_forne"),
-                    TelefoneEmp = leitor.GetString("telefoner_forne")
+                    Nome = DAOHelper.GetString(leitor, "nome_forne"),
+                    Responsavel = DAOHelper.GetString(leitor, "nome_responsa_forne"),
+                    CEP = DAOHelper.GetString(leitor, "cep_forne"),
+                    CNPJ = DAOHelper.GetString(leitor, "cnpj_forne"),
+                    TelefoneRes = DAOHelper.GetString(leitor, "telefoner_respon_forne"),
+                    Rua = DAOHelper.GetString(leitor, "rua_forne"),
+                    Bairro = DAOHelper.GetString(leitor, "bairro_forne"),
+                    Cidade = DAOHelper.GetString(leitor, "cidade_forne"),
+                    Estado = DAOHelper.GetString(leitor, "estado_forne"),
+                    NumeroCasaApt = DAOHelper.GetString(leitor, "numero_forne"),
+                    Complemento = DAOHelper.GetString(leitor, "complemento_forne"),
+                    RazaoSocial = DAOHelper.GetString(leitor, "razao_social_forne"),
+                    TelefoneEmp = DAOHelper.GetString(leitor, "telefoner_forne")
                 };
                 lista.Add(fornecedor);
             }
