@@ -11,7 +11,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddSingleton<AppBugaoMotoFVLE.Configs.Conexao>();
 builder.Services.AddSingleton<AppBugaoMotoFVLE.Components.Models.FornecedorDAO>();
-
+//builder.Services.AddScoped<AppBugaoMotoFVLE.Models.ProdutoDAO>();
 //Adicionar a linha acima antes de `var app = builder.Build();
 var app = builder.Build();
 
