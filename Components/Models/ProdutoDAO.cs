@@ -10,6 +10,26 @@ public class ProdutoDAO
         _conexao = conexao;
     }
 
+    public void InserirProduto(Produto produto)
+    {
+        try
+        {
+            var comando = _conexao.CreateCommand("INSERT INTO Produto VALUES (null, @_nome_prod, @_codigo_prod, @_quantidade_prod, @_valor_prod)");
+            comando.Parameters.AddWithValue("@_nome_prod", produto.Nome);
+            comando.Parameters.AddWithValue("@_codigo_prod", produto.Codigo);
+
+
+            comando.Parameters.AddWithValue("@_quantidade_prod", produto.Quantidade);
+            comando.Parameters.AddWithValue("@_valor_prod", produto.Valor);
+            
+
+            comando.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
     public List<Produto> ListarTodos()
     {
         var lista = new List<Produto>();

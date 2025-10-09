@@ -12,36 +12,54 @@
           <button href="/CadastroProduto" class="btn btn-add"><i class="fi fi-sr-user-add"></i> Adicionar novo produto</button>
         </div>
         <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Código</th>
-              <th>Quantidade</th>
-              <th>Valor</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Oleo</td>
-              <td>3534554</td>
-              <td>23</td>
-              <td>R$ 700</td>
-              <td>
-                <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
-              </td>
-          
-            </tr>
-            <tr>
-                <td>Esape</td>
-                <td>875686768</td>
-                <td>1</td>
-                <td>R$ 65</td>
-                <td>
-                  <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
-                </td>
-            </tr>
-          </tbody>
+            
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Código</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+                
+            
+               
+            <tbody>
+                @{
+                    int contador = 1;
+                    @foreach (var produto in ListarTodos)
+                    {
+                        <tr>
+                            <td>@produto.Nome</td>
+                            <td>@produto.Codigo</td>
+                            <td>@produto.Quantidade</td>
+                            <td>@produto.Valor</td>
+<td>
+                                <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
+
+</td>
+                           
+
+                        </tr>
+                        contador++;
+                    }
+                }
+
+                @code {
+                    private List<Produto> ListarTodos = new();
+
+
+                    protected override void OnInitialized()
+                    {
+                        CarregarProduto();
+                    }
+
+                    private void CarregarProduto()
+                    {
+                        ListarTodos = ProdutoDAO.ListarTodos();
+                    }
+                }
+            </tbody>
         </table>
     </div>
 </div>
