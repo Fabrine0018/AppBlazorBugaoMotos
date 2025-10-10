@@ -20,12 +20,9 @@ public class ClienteDAO
             var comando = _conexao.CreateCommand("INSERT INTO Cliente VALUES (null, @_nome_clie, @_telefone_clie, @_cep_clie, @_complemento_clie, @_cpf_clie, @_rua_clie, @_estado_clie, @_cidade_clie, @_bairro_clie)");
             comando.Parameters.AddWithValue("@_nome_clie", cliente.Nome);
             comando.Parameters.AddWithValue("@_telefone_clie",cliente.Telefone);
-     
-       
             comando.Parameters.AddWithValue("@_cep_clie", cliente.Cep);
             comando.Parameters.AddWithValue("@_complemento_clie", cliente.Complemento);
             comando.Parameters.AddWithValue("@_cpf_clie", cliente.Cpf);
-           
             comando.Parameters.AddWithValue("@_rua_clie", cliente.Rua);
             comando.Parameters.AddWithValue("@_estado_clie", cliente.Estado);
             comando.Parameters.AddWithValue("@_cidade_clie", cliente.Cidade);
@@ -42,8 +39,7 @@ public class ClienteDAO
     public List<Cliente> ListarCliente()
     {
         var listaClie = new List<Cliente>();
-
-        var comando = _conexao.CreateCommand("SELECT * FROM Cliente;");
+        var comando = _conexao.CreateCommand("SELECT * FROM Cliente");
         var leitor = comando.ExecuteReader();
 
         while (leitor.Read())
@@ -60,8 +56,6 @@ public class ClienteDAO
             cliente.Bairro = DAOHelper.GetString(leitor, "bairro_clie");
             cliente.Rua = DAOHelper.GetString(leitor, "rua_clie");
             cliente.Cep = DAOHelper.GetString(leitor, "cep_clie");
-
-
 
             listaClie.Add(cliente);
         }

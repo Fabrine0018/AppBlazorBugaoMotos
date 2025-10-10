@@ -1,6 +1,6 @@
 ﻿namespace AppBugaoMotoFVLE.Components.Models
 {
-    public class Serviço
+    public class Servico
     {
         public int IdSer {  get; set; }
  

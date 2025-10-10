@@ -13,18 +13,15 @@ namespace AppBugaoMotoFVLE.Components.Models
             _conexao = conexao;
         }
 
-        public void InserirServico(Serviço servico)
+        public void InserirServico(Servico servico)
         {
             try
             {
-                var comando = _conexao.CreateCommand("INSERT INTO Servico VALUES (null, @_nome_ser, @_codigo_ser, @_prestador_ser, @_valor_ser)");
+                var comando = _conexao.CreateCommand("INSERT INTO Serviço VALUES (null, @_nome_ser, @_codigo_ser, @_prestador_ser, @_valor_ser)");
                 comando.Parameters.AddWithValue("@_nome_ser", servico.Nome);
-                comando.Parameters.AddWithValue("@_nome_ser", servico.Codigo);
-
-
+                comando.Parameters.AddWithValue("@_codigo_ser", servico.Codigo);
                 comando.Parameters.AddWithValue("@_prestador_ser", servico.Prestador);
-                comando.Parameters.AddWithValue("@_nome_ser", servico.Valor);
-
+                comando.Parameters.AddWithValue("@_valor_ser", servico.Valor);
 
                 comando.ExecuteNonQuery();
             }
@@ -34,16 +31,16 @@ namespace AppBugaoMotoFVLE.Components.Models
             }
         }
 
-        public List<Serviço> ListarServico()
+        public List<Servico> ListarServico()
         {
-            var lista = new List<Serviço>();
+            var lista = new List<Servico>();
 
-            var comando = _conexao.CreateCommand("SELECT * FROM Serviço ;");
+            var comando = _conexao.CreateCommand("SELECT * FROM Serviço");
             var leitor = comando.ExecuteReader();
 
             while (leitor.Read())
             {
-                var servico = new Serviço
+                var servico = new Servico
                 {
                     IdSer = leitor.GetInt32("id_ser"),
                     Nome = DAOHelper.GetString(leitor, "nome_ser"),
