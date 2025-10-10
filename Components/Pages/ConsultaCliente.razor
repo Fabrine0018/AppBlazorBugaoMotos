@@ -15,7 +15,7 @@
         <div class="search-bar">
             <input type="text" placeholder="Buscar">
             <button class="btn btn-filter"><i class="fa-solid fa-filter"></i> Filtrar</button>
-            <button class="btn btn-add"><i class="fi fi-sr-user-add"></i> Adicionar novo cliente</button>
+            <a href="/CadastroCliente" class="btn btn-add"><i class="fi fi-sr-user-add"></i> Adicionar novo cliente</a>
         </div>
 
         <table>
@@ -34,9 +34,10 @@
                     @foreach (var cliente in listaClie)
                     {
                         <tr>
+                            <td> @contador </td>
                             <td>@cliente.Nome</td>
                             <td>@cliente.Telefone</td>
-                            <td>@cliente.Cpf</td>
+                            <td> @cliente.Cpf </td>
                             <td>
                                 <button class="btn-view"><i class="fi fi-rr-eye"></i></button>
                             </td>
